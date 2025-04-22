@@ -41,5 +41,6 @@ public class Q1 {
         final double finalScore = mstScore * mstWeight + assign1Score * assign1Weight + assign2Score * assign2Weight + generalPerfScore * generalPerfWeight;
 
         System.out.println(String.format("Your final score is: %s", dec.format(finalScore)));
+        input.close();
     }
 }

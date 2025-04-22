@@ -1,13 +1,13 @@
 package Practical2;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.LinkedHashMap;
 
 public class Q5 {
     private static Scanner input = new Scanner(System.in);
-    private static HashMap<Double, String> gradeMap = new HashMap<Double, String>();
+    private static LinkedHashMap<Integer, String> gradeMap = new LinkedHashMap<>();
 
     public static void main(String[] args) {
         ArrayList<Integer> scoreList = new ArrayList<Integer>();
@@ -15,11 +15,11 @@ public class Q5 {
         int sum = 0;
         String grade = "";
 
-        gradeMap.put(49.0, "F");
-        gradeMap.put(50.0, "D");
-        gradeMap.put(60.0, "C");
-        gradeMap.put(70.0, "B");
-        gradeMap.put(80.0, "A");
+        gradeMap.put(80, "A");
+        gradeMap.put(70, "B");
+        gradeMap.put(60, "C");
+        gradeMap.put(50, "D");
+        gradeMap.put(49, "F");
 
         while (userInput >= 0) {
             System.out.print(String.format("Enter score # %s (or enter -1 to stop): ", scoreList.size() + 1));
@@ -36,14 +36,12 @@ public class Q5 {
 
         final double avgScore = sum / scoreList.size();
 
-        for (Map.Entry<Double, String> entry : gradeMap.entrySet()) {
-            System.out.println(entry.getKey());
+        for (Map.Entry<Integer, String> entry : gradeMap.entrySet()) {
             if (avgScore <= entry.getKey()) {
                 grade = entry.getValue();
             }
         }
 
         System.out.println(String.format("Average Score: %s Grade: %s", avgScore, grade));
-
     }
 }
