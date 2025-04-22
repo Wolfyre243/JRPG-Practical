@@ -4,7 +4,6 @@
  */
 package Practical2;
 
-import java.text.DecimalFormat;
 import java.util.Scanner;
 
 /**
@@ -15,7 +14,7 @@ import java.util.Scanner;
 public class Q1 {
     public static void main(String args[]) {
         // Score weightages
-        final double mstWeight = 0.2;
+        final double mstWeight = 0.20;
         final double assign1Weight = 0.25;
         final double assign2Weight = 0.35;
         final double generalPerfWeight = 0.20;
@@ -27,7 +26,7 @@ public class Q1 {
         int generalPerfScore;
 
         Scanner input = new Scanner(System.in);
-        DecimalFormat dec = new DecimalFormat("#.00");
+        // DecimalFormat dec = new DecimalFormat("#.00");
 
         System.out.println("Enter MST Score: ");
         mstScore = input.nextInt();
@@ -40,7 +39,7 @@ public class Q1 {
 
         final double finalScore = mstScore * mstWeight + assign1Score * assign1Weight + assign2Score * assign2Weight + generalPerfScore * generalPerfWeight;
 
-        System.out.println(String.format("Your final score is: %s", dec.format(finalScore)));
+        System.out.printf("Your final score is: %.2f", finalScore);
         input.close();
     }
 }
