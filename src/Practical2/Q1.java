@@ -20,22 +20,22 @@ public class Q1 {
         final double generalPerfWeight = 0.20;
 
         // Score variables
-        int mstScore;
-        int assign1Score;
-        int assign2Score;
-        int generalPerfScore;
+        double mstScore;
+        double assign1Score;
+        double assign2Score;
+        double generalPerfScore;
 
         Scanner input = new Scanner(System.in);
         // DecimalFormat dec = new DecimalFormat("#.00");
 
         System.out.println("Enter MST Score: ");
-        mstScore = input.nextInt();
+        mstScore = input.nextDouble();
         System.out.println("Enter Assignment 1 Score: ");
-        assign1Score = input.nextInt();
+        assign1Score = input.nextDouble();
         System.out.println("Enter Assignment 2 Score: ");
-        assign2Score = input.nextInt();
+        assign2Score = input.nextDouble();
         System.out.println("Enter General Performance Score: ");
-        generalPerfScore = input.nextInt();
+        generalPerfScore = input.nextDouble();
 
         final double finalScore = mstScore * mstWeight + assign1Score * assign1Weight + assign2Score * assign2Weight + generalPerfScore * generalPerfWeight;
 

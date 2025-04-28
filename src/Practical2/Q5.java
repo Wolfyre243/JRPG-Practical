@@ -42,6 +42,6 @@ public class Q5 {
             }
         }
 
-        System.out.println(String.format("Average Score: %s Grade: %s", avgScore, grade));
+        System.out.println(String.format("Average Score: %.2f Grade: %s", avgScore, grade));
     }
 }
