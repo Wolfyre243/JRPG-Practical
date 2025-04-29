@@ -68,8 +68,7 @@ class PartTimeLecturer extends Lecturer {
     }
 }
 
-
-public class LecturerUser {
+public class LecturerUser { 
     public static void main(String[] args) {
         Lecturer[] lecArray = new Lecturer[4];
         lecArray[0] = new FullTimeLecturer("John", 1, new String[]{"1A / 01", "1A / 02"}, new int[]{20, 22}, 3500);
