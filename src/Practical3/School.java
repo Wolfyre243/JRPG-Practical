@@ -4,79 +4,6 @@ import javax.swing.JOptionPane;
 
 import java.util.*;
 
-class Person {
-    private String name;
-
-    public Person() {
-
-    }
-
-    public Person(String name) {
-        this.name = name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return this.name;
-    }
-
-    public void introduce() {
-        System.out.printf("My name is %s\n", this.name);
-    }
-}
-
-class Student extends Person {
-    private char stdYear;
-
-    public Student(String name, char year) {
-        super(name);
-        this.stdYear = year;
-    }
-
-    public char getYear() {
-        return this.stdYear;
-    }
-
-    public void introduce() {
-        super.introduce();
-        System.out.printf("I am a year %c student\n", this.stdYear);
-    }
-}
-
-class Lecturer extends Person {
-    private String[] modules;
-
-    public Lecturer() {
-        super();
-        this.modules = null;
-    }
-
-    public Lecturer(String name, String[] modules) {
-        super(name);
-        this.modules = modules;
-    }
-
-    public String[] getModules() {
-        return this.modules;
-    }
-
-    public String getModule(int index) {
-        return this.modules[index];
-    }
-
-    public void introduce() {
-        super.introduce();
-        System.out.printf("I am the lecturer of the following subjects:\n");
-        for (int i = 0; i < modules.length; i++) {
-            System.out.printf("%d. %s\n", i + 1, this.modules[i]);
-        }
-    }
-
-}
-
 public class School {
     // used to store lecturer or student objects
     private Person[] persons;
@@ -191,5 +118,76 @@ public class School {
     public static void main(String[] args) {
         School school = new School();
         school.displayPopulation();
+    }
+}
+class Person {
+    private String name;
+
+    public Person() {
+
+    }
+
+    public Person(String name) {
+        this.name = name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void introduce() {
+        System.out.printf("My name is %s\n", this.name);
+    }
+}
+
+class Student extends Person {
+    private char stdYear;
+
+    public Student(String name, char year) {
+        super(name);
+        this.stdYear = year;
+    }
+
+    public char getYear() {
+        return this.stdYear;
+    }
+
+    public void introduce() {
+        super.introduce();
+        System.out.printf("I am a year %c student\n", this.stdYear);
+    }
+}
+
+class Lecturer extends Person {
+    private String[] modules;
+
+    public Lecturer() {
+        super();
+        this.modules = null;
+    }
+
+    public Lecturer(String name, String[] modules) {
+        super(name);
+        this.modules = modules;
+    }
+
+    public String[] getModules() {
+        return this.modules;
+    }
+
+    public String getModule(int index) {
+        return this.modules[index];
+    }
+
+    public void introduce() {
+        super.introduce();
+        System.out.printf("I am the lecturer of the following subjects:\n");
+        for (int i = 0; i < modules.length; i++) {
+            System.out.printf("%d. %s\n", i + 1, this.modules[i]);
+        }
     }
 }
