@@ -37,7 +37,7 @@ class Product implements Serializable {
 }
 
 public class ProductManager {
-  public void saveProduct(Product pdt) {
+  public static void saveProduct(Product pdt) {
     File f = new File("product.dat");
     try {
       FileOutputStream fos = new FileOutputStream(f);
@@ -51,7 +51,7 @@ public class ProductManager {
     }
   }
 
-  public Product loadProduct() {
+  public static Product loadProduct() {
     File f = new File("product.dat");
 
     try {
@@ -69,6 +69,16 @@ public class ProductManager {
     } catch (Exception e) {
       System.out.println("Unknown error.");
       return null;
+    }
+  }
+
+  public static void main(String[] args) {
+    Product myProduct = new Product("005", 199);
+    saveProduct(myProduct);
+    Product p = loadProduct();
+    if (p != null) {
+      System.out.println("Code:\t" + p.getCode());
+      System.out.println("Price:\t" + p.getPrice());
     }
   }
 }
